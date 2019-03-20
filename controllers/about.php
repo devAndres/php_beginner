@@ -1,5 +1,7 @@
 <?php
 
+echo "<h1>Sobre nosotros :</h1>";
 
 
-require 'about.view.php';
+
+require 'views/about.view.php';

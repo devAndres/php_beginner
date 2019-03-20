@@ -1,26 +1,22 @@
 <?php
 
+
+echo "<h1>Hola, desde el fichero PHP<h1>";
+
+
+
 /**
- * Obtengo valores del array asociativo $_SERVER, para mostrarlos en el HTML
+ *  Instancio una variable, haciendo require de la clase 'bootstrap.php', el cuál devuelve la instancia de la conexión con la BBDD
  */
-$valores = [
-    'protocolo' => $_SERVER['SERVER_PROTOCOL'],
-    'URI' => $_SERVER['REQUEST_URI'],
-    'cliente' => $_SERVER['SERVER_USER_AGENT']
-
-];
-
-
-/* FUNCIONES : */
-require 'ejemplos/funciones.php';
-printTitulo( "Hola,  desde el fichero PHP" );
+$database = require 'core/bootstrap.php';
 
 
 
-
-
-
-require 'index.view.php';
-
-
-die();
+/**
+ *  Instancio un objeto de la clase 'Router', pasándole a su método static cargar(ficheroRutas)
+ *  El fichero 'rutas.php', llama al método definir(rutas) de la clase 'Router',
+ *  pasándole como argumento, un array asociativo con las rutas del proyecto
+ *  Así, defino las URIs y sus correspondientes rutas en el proyecto
+ */
+require Router::cargar( 'rutas.php' )
+    ->dirigir( Request::uri() );

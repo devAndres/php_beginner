@@ -2,7 +2,7 @@
 
 
 
+echo "<h1>Contacto :</h1>";
 
 
-
-require 'contacto.view.php';
+require 'views/contacto.view.php';

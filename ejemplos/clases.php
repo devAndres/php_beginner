@@ -10,10 +10,9 @@ class Persona
     public function __construct($nombre, $edad) {
         $this->nombre = $nombre;
         $this->edad = $edad;
-
         //echo toString();
         //echo esMayor();
-        //echo "Persona instanciada";
+        echo "Persona instanciada !<br>";
     }
 
     public function esMayor() {
@@ -30,9 +29,9 @@ class Persona
 
     public function check(){
         if($this->esMayor())
-            return '&#9989Mayor <strike>Menor</strike>';
+            return '&#9989Mayor <strike>Menor</strike> de edad';
         else
-            return '<strike>&#10060Mayor</strike> Menor';
+            return '<strike>&#10060Mayor</strike> Menor de edad';
     }
 
 }
@@ -52,7 +51,7 @@ class Tarea{
 }
 
 
-$personas = [
+/*$personas = [
     new Persona('Andres', 29),
     new Persona('Pepe', 10)
 ];
@@ -66,9 +65,9 @@ foreach( $personas as $i ) {
     else    echo "Es menor de edad";
     echo $i->check();
     echo "<hr>";
-}
+}*/
 
 
 
-require '../views/clases.view.php';
+//require '../views/clases.view.php';
 

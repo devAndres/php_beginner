@@ -1,12 +1,21 @@
 <?php
 
-
+/**
+ *  Clase para la conexión con la Base de Datos.
+ */
 class Conexion {
 
-    // CONEXIÓN CON LA BBDD
+    /**
+     *  Conecta y devuelve una instancia PDO (PHP Data Object) con la conexión a la BBDD.
+     *  Recibe como parámetro una variable que contiene los valores para la conexión a la Base de Datos.
+     *
+     *  Nota :
+     *  Esta variable, se instancia en la clase '', mediante un 'require' del fichero 'config.php'.
+     *  El fichero 'config.php', simplemente devuelve un array array ¿¿¿asociativo??? con los datos de la conexión
+     */
     public static function conectar($config){
 
-        echo '<pre>' . var_dump($config) . '</pre>';
+        //echo '<pre>' . var_dump($config) . '</pre>';
 
         try{
             $pdo = new PDO(
@@ -21,7 +30,5 @@ class Conexion {
             die($e->getMessage());
         }
     }
-
-
 
 }

@@ -1,20 +1,7 @@
 <?php
 
 
-// Conecto con la BBDD
-$database = require '../core/bootstrap.php';
-
-
-// Inicializo la clase para el manejo de las rutas del proyecto
-$router = new Router;
-// Indico que voy a hacer referencia al fichero que contiene las rutas
-require '../rutas.php';
-//
-
-//
-require $router->direct('about ');
-
-
+// Ya tengo la conexión con la BBDD
 
 
 require '../ejemplos/clases.php';
