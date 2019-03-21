@@ -25,16 +25,7 @@ foreach($resultado as $i){
 }*/
 
 
-/*
 
-INSTANCIO MEDIANTE EL MÉTODO array_map()
-
-*/
-$personas2 = array_map(
-    function($instancia){
-        return new Persona( $instancia->nombre, $instancia->edad );
-    }, $resultado
-);
 // Muestro las instancias
 /*foreach($personas2 as $i){
     echo $i->toString() . "<hr>";

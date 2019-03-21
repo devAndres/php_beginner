@@ -1,0 +1,44 @@
+
+
+/* FORMULARIO (crear_persona.php) */
+
+
+/* Limpio estilos de las tablas (dados en el css común)*/
+fieldset table, fieldset tr{
+    border: none;
+}
+
+
+legend{
+    text-align: center;
+    color: teal;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 1px black;
+}
+fieldset{
+    border-color: teal;
+    box-shadow: 1px 1px 1px gray;
+}
+form{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 2%;
+    border: 4px outset teal;
+    background-color: silver;
+}
+form label{
+    color: teal;
+    font-weight: bold;
+}
+form input{
+    border: 1px solid teal;
+}
+form tr{
+    margin-top: 1%;
+}
+
+form button{
+    padding: 1.5%;
+    background-color: cadetblue;
+    float: right;
+}

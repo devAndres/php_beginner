@@ -6,6 +6,7 @@ class Persona
     protected $nombre;
     protected $edad;
 
+    public static $cont;
 
     public function __construct($nombre, $edad) {
         $this->nombre = $nombre;
@@ -15,13 +16,15 @@ class Persona
         echo "Persona instanciada !<br>";
     }
 
-    public function esMayor() {
-
-        if ($this->edad > 18) return true;
-
-        else return false;
-
+    // GETTERs
+    public function getNombre(){
+        return $this->nombre;
     }
+    public function getEdad(){
+        return $this->edad;
+    }
+
+    // MÉTODOS :
 
     public function toString() {
         return "<br>$this->nombre tiene $this->edad años<br>" . $this->check();
@@ -34,7 +37,24 @@ class Persona
             return '<strike>&#10060Mayor</strike> Menor de edad';
     }
 
-}
+    public function esMayor() {
+
+        if ($this->edad > 18) return true;
+
+        else return false;
+
+    }
+
+} // fin de clase
+
+
+
+
+
+
+
+
+
 
 
 class Tarea{

@@ -9,7 +9,13 @@ class Request{
      *  Método static que devuelve la URI a la que el usuario quiere dirigrise
      */
     public static function uri(){
-        return trim( $_SERVER['REQUEST_URI'], '/' );
+
+        //echo "Has enviado : " . $_SERVER['REQUEST_URI'];
+
+        // 1º Separo la URL de los parámetros (en caso de que los haya)
+        // 2º Elimino los carácteres '/'
+        return trim( parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' );
+
     }
 
 }

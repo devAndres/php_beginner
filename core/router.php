@@ -37,6 +37,8 @@ class Router{
             return $this->rutas[ $uri ];
         }
 
+        echo "<h1>La ruta que has introducido, no es válida</h1>";
+
         throw new Exception( "No hay una ruta definida para la URI {$uri}" );
     }
 

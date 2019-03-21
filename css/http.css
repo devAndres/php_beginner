@@ -1,0 +1,8 @@
+
+/* TABLAS */
+section > table td:first-of-type{
+    color: blue;
+    background-color: cornflowerblue;
+    font-weight: bold;
+
+}

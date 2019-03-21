@@ -1,28 +1,17 @@
 <?php
 
 
-echo "<h1>Hola, desde el fichero PHP<h1>";
+echo "<h1>Hola, desde el fichero PHP</h1>";
+
+
+//var_dump( $app );
+
 
 /**
  *  Ejecuto una consulta sobre la Base de Datos y recojo el resultado
  */
 $resultado = $app['database']->getObjetos( 'personas' );
 
-
-/**
- * Obtengo valores del array asociativo $_SERVER, para mostrarlos en el HTML
- */
-/*$valores = [
-    'protocolo' => $_SERVER['SERVER_PROTOCOL'],
-    'URI' => $_SERVER['REQUEST_URI'],
-    'cliente' => $_SERVER['HTTP_USER_AGENT']
-];
-
-$todos = $_SERVER;
-*/
-require 'views/index.view.php';
-
-require 'ejemplos/Clases.php';
 echo "<ul>";
 $personas = [];
 
@@ -34,7 +23,7 @@ echo "</ul>";
 //die();
 
 
-
+require 'views/index.view.php';
 
 
 

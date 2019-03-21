@@ -1,7 +1,7 @@
 <?php
 
 
-echo "<h1>Hola, desde el fichero PHP<h1>";
+//echo "<h1>Hola, desde el fichero PHP<h1>";
 
 
 

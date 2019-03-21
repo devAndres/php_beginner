@@ -22,7 +22,7 @@ class Conexion {
                 "{$config['sgbd']}:host={$config['host']};dbname={$config['db_name']}", $config['user'], $config['pass']
                 //'mysql:host=192.168.10.10;dbname=bd_prueba', 'homestead', 'secret'
             );
-            echo '<h1>Conexión establecida con la Base de Datos</h1>';
+            echo '<h1>Conexión establecida con la Base de Datos !</h1>';
             return $pdo;
         }
         catch(PDOException $e){

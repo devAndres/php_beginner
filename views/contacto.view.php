@@ -4,6 +4,14 @@
 
 <?php require 'views/partials/nav.php' ?>
 
+    <title>Contacto</title>
+</head>
+<body>
+
+
+
+
+
 
 
 
