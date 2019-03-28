@@ -1,15 +1,23 @@
 <?php
 
 
-//echo "<h1>Hola, desde el fichero PHP<h1>";
-
+/**
+ *  Hago require del fichero 'vendor/autoload.php', que contiene la definición de las rutas de los ficheros que quiero cargar al inicio de la aplicación
+ *  Previamente :
+ *      - He creado un un fichero 'composer.json', en el que definido dichas rutas  (He definido todas, './' )
+ *      - Estando ubicado en la carpeta del proyecto, ejecuto :     composer install
+ *      - He ido a la página www.getcomposer.com y he ejectuado los comandos que especifican en ella (cambian con cada nueva versión)
+ *
+ *  Para añadir nuevas clases al autoload, ejecuto :
+ *      composer dump-autoload
+ */
+require 'vendor/autoload.php';
 
 
 /**
- *  Instancio una variable, haciendo require de la clase 'bootstrap.php', el cuál devuelve la instancia de la conexión con la BBDD
+ *  Hago require del fichero 'bootstrap.php', el cuál contiene una instancia de la conexión con la BBDD
  */
-$database = require 'core/bootstrap.php';
-
+require 'core/bootstrap.php';
 
 
 /**
@@ -18,5 +26,8 @@ $database = require 'core/bootstrap.php';
  *  pasándole como argumento, un array asociativo con las rutas del proyecto
  *  Así, defino las URIs y sus correspondientes rutas en el proyecto
  */
-require Router::cargar( 'rutas.php' )
-    ->dirigir( Request::uri() );
+Router::cargar( 'rutas.php' )
+//$router = new Router;
+    ->dirigir( Request::uri(), Request::metodo() );
+
+

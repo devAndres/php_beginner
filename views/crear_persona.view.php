@@ -1,18 +1,24 @@
+
 <?php require 'views/partials/head.php'; ?>
 
 <?php require 'views/partials/nav.php'; ?>
 
     <link type='text/css' rel='stylesheet' href='css/formulario.css'>
-    <title>Crear persona</title>
+    <link type='text/css' rel='stylesheet' href='css/tablas.css'>
 </head>
 
 <body>
+
+    <?php require 'views/partials/header.php' ?>
+
+    <?php require 'views/partials/nav.php' ?>
+
 
     <main>
 
         <!-- URL -->
         <section>
-            <form action="/crear" method="get" tarjet="_blank">
+            <form action="/recoger" method="post" tarjet="_blank">
                 <fieldset>
                     <legend>Formulario para crear una  persona :</legend>
                     <table>
@@ -34,7 +40,7 @@
 
         <section>
             <h1>Personas creadas :</h1>
-            <table>
+            <table class= "vertical">
                 <tr><th>Nombre</th><th>Edad</th></tr>
                 <?php foreach( $personas as $i ){
                     echo "<tr><td>{$i->getNombre()}</td><td>{$i->getEdad()}</td></tr>";

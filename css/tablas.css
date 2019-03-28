@@ -1,0 +1,49 @@
+
+
+/* TABLAS  */
+table, tr, td{
+    border: 1px solid darkblue !important;
+    border-collapse: collapse;
+}
+table, tr, td{
+    border: 2px solid darblue;
+}
+th, td{
+    padding: 5px;
+}
+
+section > table{
+    background-color: white;
+    text-align: center;
+}
+
+
+
+
+
+table th{
+    color: white;
+    background-color: cornflowerblue;
+}
+
+/* TABLA para mostrar las personas creadas, en la sección 'crear_persona'*/
+table.vertical{
+    /*margin: 0 10% 0 10%;*/
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* TABLAS de la sección 'http_header'*/
+/*table.horizontal tr > td:first-of-type{
+    color: blue;
+    background-color: cornflowerblue;
+    font-weight: bold;
+
+}*/
+
+/* Limpio estilos de las tablas (dados en el css común)*/
+fieldset table,
+fieldset tr,
+fieldset td{
+    border: none !important;
+}

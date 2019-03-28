@@ -8,15 +8,18 @@ class Persona
 
     public static $cont;
 
+    /**
+     * Constructor
+     */
     public function __construct($nombre, $edad) {
         $this->nombre = $nombre;
         $this->edad = $edad;
-        //echo toString();
-        //echo esMayor();
-        echo "Persona instanciada !<br>";
+        //echo "Persona instanciada !<br>";
     }
 
-    // GETTERs
+    /**
+     *  GETTERs :
+     */
     public function getNombre(){
         return $this->nombre;
     }
@@ -24,17 +27,19 @@ class Persona
         return $this->edad;
     }
 
-    // MÉTODOS :
+    /**
+     *  MÉTODOS :
+     */
 
     public function toString() {
-        return "<br>$this->nombre tiene $this->edad años<br>" . $this->check();
+        return "$this->nombre tiene $this->edad años<br>" . $this->check();
     }
 
     public function check(){
         if($this->esMayor())
-            return '&#9989Mayor <strike>Menor</strike> de edad';
+            return '&#9989Mayor de edad';
         else
-            return '<strike>&#10060Mayor</strike> Menor de edad';
+            return '&#10060<strike>Menor de edad</strike>';
     }
 
     public function esMayor() {

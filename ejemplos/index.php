@@ -1,7 +1,6 @@
 <?php
 
 
-echo "<h1>Hola, desde el fichero PHP</h1>";
 
 
 //var_dump( $app );
@@ -10,7 +9,7 @@ echo "<h1>Hola, desde el fichero PHP</h1>";
 /**
  *  Ejecuto una consulta sobre la Base de Datos y recojo el resultado
  */
-$resultado = $app['database']->getObjetos( 'personas' );
+$resultado = App::get('database')->getObjetos( 'personas' );
 
 echo "<ul>";
 $personas = [];
@@ -23,7 +22,6 @@ echo "</ul>";
 //die();
 
 
-require 'views/index.view.php';
 
 
 

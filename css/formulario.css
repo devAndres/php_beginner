@@ -3,26 +3,21 @@
 /* FORMULARIO (crear_persona.php) */
 
 
-/* Limpio estilos de las tablas (dados en el css común)*/
-fieldset table, fieldset tr{
-    border: none;
-}
-
 
 legend{
     text-align: center;
     color: teal;
-    font-size: 1.5em;
+    font-size: 2em;
     text-shadow: 1px 1px 1px black;
 }
 fieldset{
+    padding: 5%;
     border-color: teal;
     box-shadow: 1px 1px 1px gray;
 }
 form{
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 2%;
+    margin: 0 auto;
+    padding: 5%;
     border: 4px outset teal;
     background-color: silver;
 }
@@ -36,9 +31,20 @@ form input{
 form tr{
     margin-top: 1%;
 }
-
+form table{
+    width: 100%;
+}
 form button{
-    padding: 1.5%;
-    background-color: cadetblue;
+    background-color: teal;
     float: right;
+    color: white;
+    font-weight: bold;
+    padding: 2%;
+    border: 2px solid
+}
+form button:hover{
+    color: white;
+    background-color: dimgray;
+    box-shadow: 4px 2px 1px teal;
+
 }
