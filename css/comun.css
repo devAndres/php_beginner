@@ -16,12 +16,12 @@ header{
     border: 4px solid forestgreen;
     padding: 5px;
     background-color: burlywood;
-    border-radius: 0 0 0 40%;
+    border-radius: 0 0 40% 0;
     box-shadow: 10px 5px 2px dimgray;
     min-width: 15%;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
 }
 header > h1{
     color: forestgreen;

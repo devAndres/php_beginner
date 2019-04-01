@@ -3,35 +3,43 @@
 
 
 /**
- *  Clase para envolver los datos importantes de la aplicación
+ *      Clase para envolver los datos importantes de la aplicación
  *
- *  La configuración, la conexión con la Base de Datos, etc
+ *      La configuración, la conexión con la Base de Datos, etc
  *
- *  Claves :
- *      - config
- *      - database
+ *      Claves :
+ *          - config
+ *                  - database
+ *          - database
  */
 class App{
 
-    // Atributos
+    // ATRIBUTOS STATIC :
 
-    // Array asociativo en el que envuelvo los datos
+    // Array asociativo en el que envuelvo los elementos envueltos
     protected static $registry = [];
 
-    // Métodos static
+
+    // MÉTODOS STATIC :
 
 
     /**
-     *  Envuelvo una configuración, en la clase App
+     *      Envuelvo una configuración, en la clase App.
+     *
+     *      Le paso como parámetros :
+     *              - La clave para identificar el elemento, en el array asociativo 'registry'.
+     *              - El elemento que se quiere envolver.
      */
     public static function bind( $clave, $valor ){
         static::$registry[ $clave ] = $valor;
     }
 
+
     /**
-     *  Devuelvo uno de los elementos del arrary asociativo, en base al valor recibido como parámetro
+     *      Devuelvo uno de los elementos del arrary asociativo, en base al valor recibido como parámetro.
      *
-     *  (Su clave en el array asociativo 'registry')
+     *      Recibo como parámetro, su clave en el array asociativo 'registry'.
+     *      Si no se ha almacenado ningun elemento con la clave definida, lanzo una excepción.
      */
     public static function get( $clave ){
 

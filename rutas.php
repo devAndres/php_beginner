@@ -2,8 +2,12 @@
 
 
 /**
- *  Añado el redireccionamiento de cada URL hacia su correspondiente método de la clase 'PagesController',
- *  Definiéndolo mediante el método get() de la clase 'Router', para almacenarlo en el array asociativo, que es atributo de instancia, de dicha clase
+ *      Añado los redireccionamiento de cada URL, hacia su correspondiente método de su clase Controller.
+ *
+ *      Definiéndolo mediante los métodos 'get()' y 'post()' de la clase 'Router', para almacenarlo en el array asociativo, que es atributo de instancia, de dicha clase.
+ *      Paso como parámetros :
+ *          - URL que sirve de clave para identificarlo en el array asocitaivo
+ *          - Cadena de texto : claseController@metodoController
  */
 
 $router->get( '', 'PagesController@home' );

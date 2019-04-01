@@ -31,8 +31,7 @@ class ObjetosController{
             echo "No se ha recibido valor para el campo 'edad'";
         }*/
 
-        // Si se ha enviado como petición valores (2) para crear una persona,
-        // la introduzco como registro en la Persona de la BBDD
+        // Si como petición, se han enviado valores (2) para crear una persona, la introduzco como registro en la Persona de la BBDD
         $peticion = $_REQUEST;
         if( sizeof($peticion) == 2 ){
             App::get('database')->insertar( 'personas', $peticion );

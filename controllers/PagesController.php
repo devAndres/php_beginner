@@ -3,17 +3,20 @@
 /**
  *  Clase manejadora de los controllers de los views
  *
- *  Contiene un método por cada view del proyecto, a la que se quiera definir un controller
+ *  Contiene un método por cada view del proyecto, a la que se quiera definir un controller.
  *
- *      - Recibe la petición
- *      - Delega en un método controlador
- *      - Devuelve la respuesta
+ *      - Recibo la petición
+ *      - Delego en un método controlador
+ *      - Devuelvo la respuesta
  */
 class PagesController{
 
 
     /**
-     *  Controller para la view del apartado 'inicio'
+     *      Controller para la view del apartado 'inicio'.
+     *
+     *      Selecciono aleatoriamente, la ruta de una imagen, para mostrarla en la vista.
+     *      Devuelvo una llamada al método view() pasándole los datos necesarios como parámetro, la cual, cual devuelve la vista inicial/principal.
      */
     public function home(){
 
@@ -28,14 +31,16 @@ class PagesController{
             "imagen_4"
         ];
         $ruta_img = "img/" . $imagenes[ random_int(0, sizeof($imagenes)-1) ] . ".jpg";
-        $txt_pie_img = "Esto es una imágen";
+        $txt_pie_img = "Esto es una imagen";
 
         return view( 'index', compact( "titulo", 'ruta_img', 'txt_pie_img' ) );
     }
 
 
     /**
-     * Controller para la view del apartado 'Sobre nosotros'
+     *      Controller para la view del apartado 'Sobre nosotros'.
+     *
+     *      Devuelvo una llamada al método view() pasándole los datos necesarios como parámetro, la cual, cual devuelve la vista 'about'.
     */
     public function about(){
 
@@ -46,7 +51,9 @@ class PagesController{
 
 
     /**
-     *    Controller para la view del apartado 'contacto'
+     *    Controller para la view del apartado 'Contacto'.
+     *
+     *    Devuelvo una llamada al método view() pasándole los datos necesarios como parámetro, la cual, cual devuelve la vista 'contacto'.
      */
     public function contacto(){
 
@@ -57,15 +64,19 @@ class PagesController{
 
 
     /**
-     *    Controller para la view del apartado que consta de un formulario para la creación de personas en la BBDD de MySQL
+     *    Controller para la view del apartado que consta de un formulario para la creación de personas en la BBDD de MySQL.
+     *
+     *    Consulto todos los registros de la tabla 'persona'.
+     *    Si hay registros en la tabla Persona, los instancio como objeto Persona, para mostrarlos en una tabla de la vista.
+     *    Instancio los objetos de la clase 'Persona', llamando al método array_map().
+     *    Devuelvo una llamada al método view() pasándole los datos necesarios como parámetro, la cual, cual devuelve la vista 'crear_persona'.
      */
     public function crear_persona(){
 
         $titulo = "Crear personas";
 
-        // Si hay registros en la tabla Persona, los instancio como objeto Persona, para mostrarlos en una tabla de la vista
         $objetosPDO = App::get('database')->getObjetos( 'personas' );
-        // INSTANCIO MEDIANTE EL MÉTODO array_map()
+
         $personas = array_map(
             function( $item ){
                 return new Persona( $item->nombre, $item->edad );
@@ -77,7 +88,9 @@ class PagesController{
 
 
     /**
-     *    Controller para la view del apartado que muestra datos sobre el HTTP header
+     *    Controller para la view del apartado que muestra datos sobre el HTTP header.
+     *
+     *    Devuelvo una llamada al método view() pasándole los datos necesarios como parámetro, la cual, cual devuelve la vista 'crear_persona'.
      */
     public function http_header(){
 

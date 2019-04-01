@@ -1,18 +1,29 @@
 <?php
 
 /**
- *  Clase para redireccionar
+ *      Clase para gestionar el redireccionamiento de las peticiones del cliente, hacia una URI concreta.
+ *
+ *
  */
 class Router{
 
-    // Atributo
+    // ATRIBUTOS :
+
     protected $rutas = [];
 
+
     /**
-     *  Cargo las rutas (método static que hace de contructor, devolviendo una instancia de la clase)
-     *  Creo una instancia de la clase (referencia 'static')
-     *  Importo el fichero PHP que contiene el array asociativo URI=>Ruta
-     *  Devuelvo la instancia
+     *      MÉTODOS PUBLIC :
+     */
+
+
+    /**
+     *      Cargo las rutas
+     *
+     *      Método static que sirve de contructor, devolviendo una instancia de la clase
+     *      Creo una instancia de la clase (referencia 'static')
+     *      Importo el fichero PHP que contiene el array asociativo URI=>Ruta
+     *      Devuelvo la instancia de la clase 'Router'
      */
     public static function cargar( $ficheroRutas ){
 
@@ -24,16 +35,6 @@ class Router{
 
     }
 
-    /**
-     *  Defino las ruta
-     */
-    /*public function definir( $rutas ){
-        //$this->rutas = $rutas;
-        $this->rutas =  [
-            'GET' => [], // para peticiones GET
-            'POST' => [] // para peticiones POST
-        ];
-    }*/
 
     /**
      *  Devuelvo la ruta correspondiente a la URI pasada por parámetro, si existe en el array asociativo definido lanzo una excepción
@@ -52,8 +53,40 @@ class Router{
     }
 
 
+    // AÑADO MÉTODOS PARA PODER ALMACENAR LOS REDIRECCIONAMINETOS [URL->URI], SEPARANDOLOS EN BASE AL MÉTODO DE PETICIÓN (request method)
+
     /**
-     *  Llamo al método protected, que contiene el controlador de la vista a la que se quiere llamar
+     *      Añado un redireccionamiento de tipo GET, al array asociativo 'GET', que es un elemento del array asociativo 'rutas'.
+     *
+     *      Recibo :
+     *          - La clave que lo identifica, que se corresponde con la URL, que sirve para localizar el fichero correspondiente.
+     *          - Una cadena de texto formada por : ClaseController@metodoController
+     */
+    public function get( $uri, $controller ){
+        $this->rutas['GET'][$uri] = $controller;
+
+    }
+
+
+    /**
+     *      Añado un redireccionamiento de tipo POST, al array asociativo 'POST', que es un elemento del array asociativo 'rutas'.
+     *
+     *      Recibo :
+     *          - La clave que lo identifica, que se corresponde con la URL, que sirve para localizar el fichero correspondiente.
+     *          - Una cadena de texto formada por : ClaseController@metodoController
+     */
+    public function post( $uri, $controller ){
+        $this->rutas['POST'][$uri] = $controller;
+    }
+
+
+    /**
+     *      MÉTODOS PROTECTED :
+     */
+
+
+    /**
+     *      Llamo al método protected, que contiene el controlador de la vista a la que se quiere llamar
      */
     protected function callAction( $controlador, $accion ){
 
@@ -72,22 +105,17 @@ class Router{
     }
 
 
-    // AÑADO MÉTODOS PARA PODER ALMACENAR LOS REDIRECCIONAMINETOS [URL->URI], SEPARANDOLOS EN BASE AL MÉTODO DE PETICIÓN (request method)
 
     /**
-     *  Añado un redireccionamiento GET
+     *  Defino las ruta
      */
-    public function get( $uri, $controller ){
-        $this->rutas['GET'][$uri] = $controller;
-
-    }
-
-    /**
-     *  Añado un redireccionamiento POST
-     */
-    public function post( $uri, $controller ){
-        $this->rutas['POST'][$uri] = $controller;
-    }
+    /*public function definir( $rutas ){
+        //$this->rutas = $rutas;
+        $this->rutas =  [
+            'GET' => [], // para peticiones GET
+            'POST' => [] // para peticiones POST
+        ];
+    }*/
 
 
 } // fin de la clase
