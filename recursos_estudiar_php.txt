@@ -1,0 +1,9 @@
+PHP-Laravel		PHP		https://laracasts.com/series/php-for-beginners		Introduccion a PHP programando un mini-framework
+			GENERAL		1- Object-Oriented Bootcamp				Repaso de conceptos en programacion orientada a objetos
+			GENERAL		2- Simple Rules for Simpler Code			Consejos a la hora de programar para hacer el código más claro
+			GENERAL		3 - SOLID Principles in PHP				Principios para hacer mas entendible los desarrollos realizados en programación orientada a objetos
+			LARAVEL		https://laracasts.com/series/laravel-from-scratch-2018	Programar con Laravel
+			GENERAL		4 - Design Patterns in PHP				Patrones de diseño
+VBA Macros		Desarrollo de Macros 190304 a.docx					Conceptos genéricos en el desarrollo de macros
+Bases de datos			Uso de MySQL y Postgresql
+Python			
