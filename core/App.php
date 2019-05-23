@@ -1,6 +1,12 @@
 <?php
 
 
+/**
+ *      Defino que pertenece al namespace 'Core', dentro de 'App'
+ */
+namespace App\Core;
+
+
 
 /**
  *      Clase para envolver los datos importantes de la aplicación
@@ -46,6 +52,7 @@ class App{
         if( ! array_key_exists( $clave, static::$registry ) ){
             throw new Exception( "{$clave} no ha sido envuelta en el contenedor" );
         }
+
         return static::$registry[ $clave ];
     }
 

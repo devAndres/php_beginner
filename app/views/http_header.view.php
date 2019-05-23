@@ -1,14 +1,14 @@
 
-<?php require 'views/partials/head.php'; ?>
+<?php require 'app/views/partials/head.php'; ?>
 
-    <link type='text/css' rel='stylesheet' href='css/tablas.css'>
+    <link type='text/css' rel='stylesheet' href='public/css/tablas.css'>
 
 </head>
 <body>
 
-    <?php require 'views/partials/header.php' ?>
+    <?php require 'app/views/partials/header.php' ?>
 
-    <?php require 'views/partials/nav.php' ?>
+    <?php require 'app/views/partials/nav.php' ?>
 
 
     <main>
@@ -58,4 +58,4 @@
 
 
 
-<?php require 'views/partials/footer.php'; ?>
+<?php require 'app/views/partials/footer.php'; ?>

@@ -1,6 +1,12 @@
 <?php
 
 /**
+ *      Defino el namespace que se utiliza en este fichero
+ */
+use App\Core\App;
+
+
+/**
  *      Fichero 'bootstrap.php' :
  *
  *      Envuelvo las configuraciones de la aplicación :
@@ -59,7 +65,7 @@ function view( $nombre, $data ){
         extract( $data );
     }
 
-    require "views/". $nombre .".view.php";
+    require "app/views/". $nombre .".view.php";
 }
 
 

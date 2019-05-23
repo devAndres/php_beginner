@@ -1,6 +1,13 @@
 <?php
 
 /**
+ *      Defino que pertenece al namespace 'Core', dentro de 'App'
+ */
+namespace App\Core; //\Services;
+
+
+
+/**
  *  Clase para gestionar las peticiones de URI que el cliente hace desde el navegador
  */
 class Request{

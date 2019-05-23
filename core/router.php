@@ -1,5 +1,13 @@
 <?php
 
+
+/**
+ *      Defino que pertenece al namespace 'Core', dentro de 'App'
+ */
+namespace App\Core;
+
+
+
 /**
  *      Clase para gestionar el redireccionamiento de las peticiones del cliente, hacia una URI concreta.
  *
@@ -94,6 +102,9 @@ class Router{
         echo "<pre>".var_dump($controlador)."</pre>";
         echo "<pre>".var_dump($accion)."</pre>";
         echo "<pre>".var_dump($this->rutas)."</pre>";*/
+
+        $controlador = "App\\Controllers\\{$controlador}";        //die($controlador);
+        $controlador = new $controlador;
 
         if( method_exists( $controlador, $accion ) ){
             return  (new $controlador)->$accion();

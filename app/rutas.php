@@ -13,7 +13,7 @@
 $router->get( '', 'PagesController@home' );
 $router->get( 'contacto', 'PagesController@contacto' );
 $router->get( 'about', 'PagesController@about');
-$router->get( 'crear_persona', 'PagesController@crear_persona' );
+$router->get( 'crear_persona', 'ObjetosController@crear_objeto_bd' );
 $router->get(  'http_header', 'PagesController@http_header' );
 
 $router->post(  'recoger', 'ObjetosController@recoger' );

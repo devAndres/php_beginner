@@ -1,5 +1,7 @@
 <?php
 
+namespace App\ejemplos\clases;
+
 
 class Persona
 {

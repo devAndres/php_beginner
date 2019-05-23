@@ -20,13 +20,22 @@ require 'vendor/autoload.php';
 require 'core/bootstrap.php';
 
 
+
+/**
+ *      Defino los namespace que uso en este fichero
+ */
+use App\Core\{ Router, Request };
+
+
+
+
 /**
  *  Instancio un objeto de la clase 'Router', pasándole a su método static cargar(ficheroRutas)
  *  El fichero 'rutas.php', llama al método definir(rutas) de la clase 'Router',
  *  pasándole como argumento, un array asociativo con las rutas del proyecto
  *  Así, defino las URIs y sus correspondientes rutas en el proyecto
  */
-Router::cargar( 'rutas.php' )
+Router::cargar( 'app/rutas.php' )
 //$router = new Router;
     ->dirigir( Request::uri(), Request::metodo() );
 

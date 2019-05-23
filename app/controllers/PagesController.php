@@ -1,6 +1,14 @@
 <?php
 
 /**
+ *       Defino que pertenece al namespace 'Controllers', dentro de 'App'
+ */
+namespace App\Controllers;
+use App\Core\App;
+
+
+
+/**
  *  Clase manejadora de los controllers de los views
  *
  *  Contiene un método por cada view del proyecto, a la que se quiera definir un controller.
@@ -46,7 +54,8 @@ class PagesController{
 
         $titulo = "Sobre Nosotros";
 
-        return view( 'about', compact('titulo') );
+        /*return view( 'about', compact('titulo') );*/
+        return view( 'about', [ 'titulo' => $titulo ] );
     }
 
 
@@ -63,27 +72,7 @@ class PagesController{
     }
 
 
-    /**
-     *    Controller para la view del apartado que consta de un formulario para la creación de personas en la BBDD de MySQL.
-     *
-     *    Consulto todos los registros de la tabla 'persona'.
-     *    Si hay registros en la tabla Persona, los instancio como objeto Persona, para mostrarlos en una tabla de la vista.
-     *    Instancio los objetos de la clase 'Persona', llamando al método array_map().
-     *    Devuelvo una llamada al método view() pasándole los datos necesarios como parámetro, la cual, cual devuelve la vista 'crear_persona'.
-     */
-    public function crear_persona(){
 
-        $titulo = "Crear personas";
-
-        $objetosPDO = App::get('database')->getObjetos( 'personas' );
-
-        $personas = array_map(
-            function( $item ){
-                return new Persona( $item->nombre, $item->edad );
-            }, $objetosPDO
-        );
-        return view( 'crear_persona', compact( 'titulo', 'personas' ) );
-    }
 
 
 
